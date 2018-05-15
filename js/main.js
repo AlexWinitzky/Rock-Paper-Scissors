@@ -1,13 +1,5 @@
 var array = ["rock", "paper", "scissors"]
 
-//var autoChoice = array[Math.floor(Math.random() * array.length)]
-
-//var userChoice = function("rock", "paper", "scissors") {
- // var input1 = document.getElementById("rock")
- // var input2 = document.getElementById("paper")
- //var input3 = document.getElementById("scissors")
-//}
-
 var clickrock = document.getElementById("rock")
 var clickPaper = document.getElementById("paper")
 var clickScissors = document.getElementById("scissors")
@@ -15,7 +7,6 @@ var clickScissors = document.getElementById("scissors")
 var userChoice = rock.addEventListener("click", autoChoice)
 var userChoice = paper.addEventListener("click", autoChoice2)
 var userChoice = scissors.addEventListener("click", autoChoice3)
-
 
 function autoChoice() {
   var compPick = array[Math.floor(Math.random() * array.length)]
@@ -33,30 +24,48 @@ function autoChoice3() {
   compare(userChoice, compPick)
 }
 
+function validateField1() {
+  var docs = document.getElementById("img1")
+  docs.setAttribute("src", "/Users/admin/Desktop/Coding/Devpoint/rps/rock_and_roll.gif")
+  docs.style.display = 'block'
+}
+function validateField2() {
+  var docs = document.getElementById("img2")
+  docs.setAttribute("src", "/Users/admin/Desktop/Coding/Devpoint/rps/paper_stacks.gif")
+  docs.style.display = 'block'
+}
+function validateField3() {
+  var docs = document.getElementById("img3")
+  docs.setAttribute("src", "/Users/admin/Desktop/Coding/Devpoint/rps/scissor_kick.gif")
+  docs.style.display = ''
+}
 function compare(userChoice, compPick) {
 
   if (userChoice === compPick) {
-    alert (`Computer chose ${compPick} Great minds think alike, it's a draw!`)
+   return document.getElementById("game").innerHTML = "The sentient AI chose " + `${compPick}` + "!" + " Great minds think alike, it's a draw!"
   }
   if (userChoice === "rock") {
     if (compPick === "scissors") {
-      alert (`Computer chose ${compPick} You won!`)
+      return validateField1()
+      return document.getElementById("game").innerHTML = "Skynet chose " + `${compPick}` + "! You won!"
     } else {
-      alert (`Computer chose ${compPick} You lost!`)
+      return document.getElementById("game").innerHTML = "The sentient AI chose " + `${compPick}` + "! You lost!"
     }
   }
   if (userChoice === "paper") {
     if (compPick === "rock") {
-      alert ( `Computer chose ${compPick} You won!`)
+      return validateField2()
+      return document.getElementById("game").innerHTML = "The Autobots chose " + `${compPick}` + "! You won!"
     } else {
-      alert ( `Computer chose ${comPick} You lost!`)
+      return document.getElementById("game").innerHTML = "The Decepticons chose " + `${compPick}` + "! You lost!"
       }
     }
   if (userChoice === "scissors") {
     if (compPick === "rock") {
-      alert (`Computer chose ${comPick} You lost!`)
+      return document.getElementById("game").innerHTML = "The self-aware AI chose " + `${compPick}` + "! You lost!"
     } else {
-      alert (`Computer chose ${compPick} You won!`)
+      return validateField3()
+      return document.getElementById("game").innerHTML = "Skynet chose " + `${compPick}` + "! You won!"
     }
   }
 }
