@@ -1,30 +1,42 @@
 <html>
-  <head>
-    <title>RPS</title>
-    <link rel="stylesheet" href="./css/style.css">
-  </head>
 
-  <body>
-    <h1 class ="center">Rock Paper Scissors</h1>
-    
-    <div class="center">
+<head>
+  <title>Rock Paper Scissors</title>
+  <link rel='stylesheet' href='styles.css'>
+</head>
 
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+<body>
+  <div class='center'>
+    <h1>Rock <> Paper <> Scissors</h1>
+  </div>
 
-        <p id="game"></p>
-        
-        <section class="center">
+  <div class='block'>
+    <img id='rock' src='./gifs/rock_and_roll.gif' />
+    <img id='paper' src='./gifs/paper_stacks.gif' />
+    <img id='scissors' src='./gifs/scissor_kick.gif' />
+  </div>
 
-          <img id="img1" src='/Users/admin/Desktop/Coding/Devpoint/rps/rock_and_roll.gif' style="display:none">
-          <img id="img2" src='/Users/admin/Desktop/Coding/Devpoint/rps/paper_stacks.gif' style="display:none">
-          <img id="img3" src='/Users/admin/Desktop/Coding/Devpoint/rps/scissor_kick.gif' style="display:none">
+  <div class='choices'>
+    <div class='human'>
+      <h2 class='centered'>Human: </h2>
+      <h2 id='user' class='centered'></h2>
+    </div>
+    <div class='ai'>
+      <h2 class='centered'>Computer:</h2>
+      <h2 id='comp' class='centered'></h2>
+    </div>
+  </div>
 
-        </section>
-      </div>
+  <h1 id='message' class='centered'></h1>
 
-    <script src="./js/main.js" src="node_modules/confetti-js/dist/index.min.js"></script>
-  </body>
-  
+  <div class='scoots' class='centered'>
+    <p id='wins'>Wins:</p>
+    <p id='losses'>Losses:</p>
+    <p id='ties'>Ties:</p>
+  </div>
+
+
+  <script src='main.js'></script>
+</body>
+
 </html>
